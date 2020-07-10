@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import NumberFormat from 'react-number-format';
@@ -62,6 +62,10 @@ class UpdateTransaction extends Component {
   handleSelectCategory = (selected) => {
     let category = selected.value;
     this.setState({ category });
+  };
+
+  handleCancel = () => {
+    this.setState({ transactionUpdated: true });
   };
 
   render() {
@@ -151,12 +155,15 @@ class UpdateTransaction extends Component {
                 </div>
               </TransactionRow>
               <div className="row mt-2">
-                <div className="col-md-3 offset-md-9 text-right">
+                <div className="col-md-12 text-right">
                   <button type="submit" className="btn btn-primary mr-2">
                     Submit
                   </button>
-                  <button className="btn btn-secondary" onClick={handleReset}>
+                  <button className="btn btn-secondary mr-2" onClick={handleReset}>
                     Start Over
+                  </button>
+                  <button className="btn btn-light" onClick={this.handleCancel}>
+                    Cancel
                   </button>
                 </div>
               </div>

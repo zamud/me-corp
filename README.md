@@ -52,10 +52,12 @@ One of MeCorp's main objectives was to simplify transaction entry. Before, I pai
 
 For efficient bulk entry, MeCorp accepts a spreadsheet of transactions - each row consting of date, merchant, amount in that order. In my case, I could massage the aforementioned `.csv` a bit, and have this ready in seconds. For example:
 
-| 7/5/2020 | GAS STATION | $2.43 |
-| 7/6/2020 | GROCERY STORE | $23.32 |
+|          |                  |         |
+| -------- | ---------------- | ------- |
+| 7/5/2020 | GAS STATION      | \$2.43  |
+| 7/6/2020 | GROCERY STORE    | \$23.32 |
 | 7/9/2020 | FANCY RESTAURANT | \$76.23 |
-| ... | ... | ... |
+| ...      | ...              | ...     |
 
 Using [`react-dropzone`](https://react-dropzone.js.org/), one can import a spreadsheet, and MeCorp will set up a list of transactions to complete:
 
