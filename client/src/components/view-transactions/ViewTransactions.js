@@ -86,85 +86,85 @@ const buildData = (initialData, data) => {
       if (matchesItem(transaction, item)) {
         let transactionDate = moment(transaction.date);
         if (
-          transactionDate.isAfter(dateUtils.startJan) &&
-          transactionDate.isBefore(dateUtils.endJan)
+          transactionDate.isSameOrAfter(dateUtils.startJan) &&
+          transactionDate.isSameOrBefore(dateUtils.endJan)
         ) {
           item.jan += transaction.amount;
           item.jan = parseFloat((Math.round(item.jan * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startFeb) &&
-          transactionDate.isBefore(dateUtils.endFeb)
+          transactionDate.isSameOrAfter(dateUtils.startFeb) &&
+          transactionDate.isSameOrBefore(dateUtils.endFeb)
         ) {
           item.feb += transaction.amount;
           item.feb = parseFloat((Math.round(item.feb * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startMar) &&
-          transactionDate.isBefore(dateUtils.endMar)
+          transactionDate.isSameOrAfter(dateUtils.startMar) &&
+          transactionDate.isSameOrBefore(dateUtils.endMar)
         ) {
           item.mar += transaction.amount;
           item.mar = parseFloat((Math.round(item.mar * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startApr) &&
-          transactionDate.isBefore(dateUtils.endApr)
+          transactionDate.isSameOrAfter(dateUtils.startApr) &&
+          transactionDate.isSameOrBefore(dateUtils.endApr)
         ) {
           item.apr += transaction.amount;
           item.apr = parseFloat((Math.round(item.apr * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startMay) &&
-          transactionDate.isBefore(dateUtils.endMay)
+          transactionDate.isSameOrAfter(dateUtils.startMay) &&
+          transactionDate.isSameOrBefore(dateUtils.endMay)
         ) {
           item.may += transaction.amount;
           item.may = parseFloat((Math.round(item.may * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startJun) &&
-          transactionDate.isBefore(dateUtils.endJun)
+          transactionDate.isSameOrAfter(dateUtils.startJun) &&
+          transactionDate.isSameOrBefore(dateUtils.endJun)
         ) {
           item.jun += transaction.amount;
           item.jun = parseFloat((Math.round(item.jun * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startJul) &&
-          transactionDate.isBefore(dateUtils.endJul)
+          transactionDate.isSameOrAfter(dateUtils.startJul) &&
+          transactionDate.isSameOrBefore(dateUtils.endJul)
         ) {
           item.jul += transaction.amount;
           item.jul = parseFloat((Math.round(item.jul * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startAug) &&
-          transactionDate.isBefore(dateUtils.endAug)
+          transactionDate.isSameOrAfter(dateUtils.startAug) &&
+          transactionDate.isSameOrBefore(dateUtils.endAug)
         ) {
           item.aug += transaction.amount;
           item.aug = parseFloat((Math.round(item.aug * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startSep) &&
-          transactionDate.isBefore(dateUtils.endSep)
+          transactionDate.isSameOrAfter(dateUtils.startSep) &&
+          transactionDate.isSameOrBefore(dateUtils.endSep)
         ) {
           item.sep += transaction.amount;
           item.sep = parseFloat((Math.round(item.sep * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startOct) &&
-          transactionDate.isBefore(dateUtils.endOct)
+          transactionDate.isSameOrAfter(dateUtils.startOct) &&
+          transactionDate.isSameOrBefore(dateUtils.endOct)
         ) {
           item.oct += transaction.amount;
           item.oct = parseFloat((Math.round(item.oct * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startNov) &&
-          transactionDate.isBefore(dateUtils.endNov)
+          transactionDate.isSameOrAfter(dateUtils.startNov) &&
+          transactionDate.isSameOrBefore(dateUtils.endNov)
         ) {
           item.nov += transaction.amount;
           item.nov = parseFloat((Math.round(item.nov * 100) / 100).toFixed(2));
         }
         if (
-          transactionDate.isAfter(dateUtils.startDec) &&
-          transactionDate.isBefore(dateUtils.endDec)
+          transactionDate.isSameOrAfter(dateUtils.startDec) &&
+          transactionDate.isSameOrBefore(dateUtils.endDec)
         ) {
           item.dec += transaction.amount;
           item.dec = parseFloat((Math.round(item.dec * 100) / 100).toFixed(2));
@@ -173,6 +173,7 @@ const buildData = (initialData, data) => {
     });
     dataArr[index] = item;
   });
+
   return builtData;
 };
 
@@ -185,7 +186,7 @@ const buildNetMonth = (data, month) => {
     netExpense += group[month];
   });
 
-  return netIncome - netExpense;
+  return parseFloat((Math.round((netIncome - netExpense) * 100) / 100).toFixed(2));
 };
 
 const buildNetData = (data) => {
