@@ -61,7 +61,7 @@ For efficient bulk entry, MeCorp accepts a spreadsheet of transactions - each ro
 
 Using [`react-dropzone`](https://react-dropzone.js.org/), one can import a spreadsheet, and MeCorp will set up a list of transactions to complete:
 
-** SCREENSHOT - IMPORT TRANSACTIONS **
+![Import Transactions](./client/public/img/readme/import-transactions.PNG)
 
 The user can specify income transactions, choose transaction categories, and exclude transactions if desired. The submit button will write all transactions to the database.
 
@@ -69,19 +69,19 @@ The user can specify income transactions, choose transaction categories, and exc
 
 For smaller-scale transaction entry, MeCorp provides the option to create transactions directly in the app. The user may add and delete as many as desired on this page, and click Submit. If any transactions fail validation, they will remain on the screen for the user to correct.
 
-** SCREENSHOT - CREATE TRANSCATIONS **
+![Create Transactions](./client/public/img/readme/create-transactions.PNG)
 
 ### View Transactions
 
 My spreadsheet-based approach culminated in a monthly table, broken down by category. It was a nice table, which I did replicate, but React and npm offered more data visualization options. The following views are available in a single tabbed view dashboard.
 
-** SCREENSHOT - TABS **
+![View Option Tabs](./client/public/img/readme/view-tabs.PNG)
 
 #### List
 
 A simple list of all transactions meeting the date and category filter criteria set at the top of the page. Date selection was aided by [`react-dates`](https://github.com/airbnb/react-dates), and category selection by [`react-dropdown`](https://github.com/fraserxu/react-dropdown).
 
-** SCREENSHOT - TRANSACTION LIST **
+![Transaction List](./client/public/img/readme/transaction-list.PNG)
 
 #### Table
 
@@ -89,15 +89,15 @@ Leveraged [`react-data-table-component`](https://github.com/jbetancur/react-data
 
 1. By Category to track where money goes each month
 
-** SCREENSHOT **
+![Category Table](./client/public/img/readme/category-table.PNG)
 
 2. By Group for a broader spending breakdown
 
-** SCREENSHOT **
+![Group Table](./client/public/img/readme/group-table.PNG)
 
 3. Net Income to track what's left over at the end of the month (Income - All Other Categories)
 
-** SCREENSHOT **
+![Net Income Table](./client/public/img/readme/net-table.PNG)
 
 #### Bar Graph
 
@@ -106,7 +106,7 @@ Used [`react-vis`](https://github.com/uber/react-vis) to render transaction data
 1. Monthly expenses in bar form, color-coded by group
 2. Monthly income as a line overlaying the expense bars
 
-** SCREENSHOT - BAR GRAPH **
+![Transaction Bar Graph](./client/public/img/readme/transaction-bar-graph.PNG)
 
 ### Manage Transactions
 
@@ -116,10 +116,10 @@ With transactions stored in a database, MeCorp provides the ability to update or
 
 Data for the selected transaction is displayed. The user may update the fields, reset as needed, and cancel if desired. The update form is handled by [`Formik`](https://github.com/formik/formik), using [`Yup`](https://github.com/jquense/yup) for validation.
 
-** SCREENSHOT - EDIT TRANSACTION **
+![Update Transaction](./client/public/img/readme/update-transaction.PNG)
 
 #### Delete Transaction(s)
 
 In this view the user can delete either an individual transaction, or all transactions currently displayed. For example, one could delete all 'Restaurant' transactions between 06/01/2020 and 06/31/2020 with a single click. In either case, the user is prompted for confirmation before deleting.
 
-** SCREENSHOT - BULK DELETE **
+![Bulk Delete](./client/public/img/readme/bulk-delete.PNG)
